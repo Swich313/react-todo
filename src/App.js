@@ -30,7 +30,6 @@ useEffect(() => {
  function handleAddTodo (e) {
    const name = todoNameRef.current.value
    if (name === '') {return} 
-    console.log(name)
     setTodos(prevTodo => {
       return [...prevTodo, {id: uuidv4(), name: name, complete: false}]
     })
@@ -45,11 +44,11 @@ function handleDeleteTodos () {
 
 return (
     <>
-    <TodoList todoList={todos} toggleTodo={toggleTodo}/>
-    <input ref={todoNameRef} type="text" />
-    <button onClick={handleAddTodo}>Add todo</button>
-    <button onClick={handleDeleteTodos}>Clear completed todos</button>
-    <div>{todos.filter(item => !item.complete).length} left to do</div>
+      <TodoList todoList={todos} toggleTodo={toggleTodo}/>
+      <input ref={todoNameRef} type="text" />
+      <button onClick={handleAddTodo}>Add todo</button>
+      <button onClick={handleDeleteTodos}>Clear completed todos</button>
+      <div>{todos.filter(item => !item.complete).length} left to do</div>
     </>
     
   )
