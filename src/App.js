@@ -1,6 +1,8 @@
 import React, {useState, useRef, useEffect} from "react";
 import TodoList from "./components/TodoList"
 import { v4 as uuidv4 } from 'uuid'
+import "./App.css"
+
 
 const LOCAL_STORAGE_KEY = 'todoApp.todos'
 
@@ -44,11 +46,17 @@ function handleDeleteTodos () {
 
 return (
     <>
+      <div className="list-wrapper">
+      <h1 className="heading">Don't Forget To...</h1>
       <TodoList todoList={todos} toggleTodo={toggleTodo}/>
-      <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add todo</button>
-      <button onClick={handleDeleteTodos}>Clear completed todos</button>
-      <div>{todos.filter(item => !item.complete).length} left to do</div>
+      <input ref={todoNameRef} type="text" className="input-form" placeholder="What are you planning to do?"/>
+      <div className="btn-wrapper">
+      <button onClick={handleAddTodo} className='green'>Add todo</button>
+      <button onClick={handleDeleteTodos} className='red'>Clear completed todos</button>
+      </div>
+      <div className='left-todo'>{todos.filter(item => !item.complete).length} plans left to do</div>
+      </div>
+      
     </>
     
   )

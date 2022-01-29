@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Todo.css"
 
 export default function Todo(props) {
 const {todo, toggleTodo} = props;   
@@ -6,7 +7,7 @@ const {todo, toggleTodo} = props;
         toggleTodo(todo.id)
     }
     return (
-        <div>
+        <div className="list" >
             <label>
                 <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
             {todo.name}
