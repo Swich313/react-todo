@@ -4,13 +4,13 @@ import "./Todo.css"
 export default function Todo(props) {
 const {todo, toggleTodo} = props;   
     function handleTodoClick () {
-        toggleTodo(todo.id)
+        toggleTodo(todo._id)
     }
     return (
         <div className="list" >
             <label>
                 <input type="checkbox" checked={todo.complete} onChange={handleTodoClick} />
-            {todo.name}
+            {todo.title}
             </label>
             
         </div>
