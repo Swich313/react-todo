@@ -6,7 +6,7 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0  ;
+    padding: 0;
 }
 
 body {
@@ -17,9 +17,7 @@ body {
   background-color: skyblue;
 }
 
-* {
-    box-sizing: border-box;
-  }
+
   .list-wrapper {
     position: relative;
     min-width: 800px ;
